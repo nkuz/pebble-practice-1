@@ -3,6 +3,11 @@
 Window *window;
 TextLayer *text_layer;
 
+typedef struct {
+  int integer;
+  bool boolean;
+} PointerExample;
+
 /*
 char *alphabet[] = {
 	"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
@@ -14,17 +19,23 @@ static char buffer[] = "Our variable is 0";
 	text_layer_set_text(text_layer, buffer);
 */
 
-
-
-
-
-
-
-
-
-
 int our_variable = 0;
 bool isEven = false;
+
+
+int giveMeANumber(bool answerToLife, int altNum) {
+  return answerToLife ? 42 : altNum;
+}
+
+void resetOurVariable(bool top) {
+  our_variable = top ? 25 : 0;
+}
+
+
+
+
+
+
 
 void select_click_handler(ClickRecognizerRef recognizer, void *context) {
 char *alphabet[] = {
@@ -34,6 +45,28 @@ char *alphabet[] = {
   static char buffer[] = "Even letter is A";
 	snprintf(buffer, sizeof(buffer), isEven ? "Even letter is %s" : "Our letter is %s", alphabet[our_variable]);
 	text_layer_set_text(text_layer, buffer);
+  for (int i = 0; i < 5; i++) {
+    APP_LOG(APP_LOG_LEVEL_INFO, "for %d", i);
+  }
+  
+  int i = 0;
+  while (i<5) {
+    APP_LOG(APP_LOG_LEVEL_INFO, "for %d", i);
+    i++;
+  }
+  our_variable = giveMeANumber(true, 18);
+  resetOurVariable(true);
+  
+  
+  
+  
+  
+  
+  PointerExample *examplePointer = malloc(sizeof(PointerExample));
+  examplePointer->integer = 420;
+  APP_LOG(APP_LOG_LEVEL_INFO,"%d", examplePointer->integer);
+  
+  
 }
 
 void up_click_handler(ClickRecognizerRef recognizer, void *context) {
