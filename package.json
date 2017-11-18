@@ -1,0 +1,21 @@
+{
+    "author": "edwin",
+    "dependencies": {},
+    "keywords": [],
+    "name": "variables",
+    "pebble": {
+        "displayName": "Variables",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": []
+        },
+        "sdkVersion": "3",
+        "uuid": "140f8e32-9b85-4c2e-95d5-9ef23e781cdd",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "1.0.0"
+}
